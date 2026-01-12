@@ -1,5 +1,5 @@
 {
-  "name": "custom-commands",
+  "name": "devto-md",
   "version": "1.0.0",
   "commands": {
     "devto-md": "commands/devto-md/fix-post.toml"
