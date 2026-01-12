@@ -7,7 +7,7 @@ This extension provides tools to help format and fix Markdown content for public
 To install this extension, use the Gemini CLI `extension add` command:
 
 ```bash
-gemini extension add https://github.com/derailed-dash/markdown-for-dev.to
+gemini extension install https://github.com/derailed-dash/markdown-for-dev.to --auto-update
 ```
 
 ## Commands
