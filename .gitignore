@@ -1,0 +1,4 @@
+.gemini/
+*.log
+tmp/
+test_input.md
