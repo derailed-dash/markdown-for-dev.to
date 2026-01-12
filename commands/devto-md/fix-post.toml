@@ -11,8 +11,8 @@ Apply the following rules to the content:
     These artifacts often appear in exports from other platforms.
 3.  **Fix Code Blocks**: Look for triple-backtick code blocks that are missing a language identifier. 
     Examine the code inside and add the correct language prefix (e.g., `python`, `bash`, `javascript`, etc.).
-4.  **Fix triple backticks in code blocks**: If you find a triople-backtick _inside_ a code block, 
-    replace it with triple-" to avoid prematurely ending the code block.
+4.  **Fix triple backticks in code blocks**: If you find a triple-backtick _inside_ a code block, 
+    replace it to avoid prematurely ending the code block.
 5.  **Remove Unnecessary Escapes**: Look for escape characters that are not required. 
     E.g. `code\\_styleguides` should be `code_styleguides`.
     E.g. \\*\\*Summarize Files\\*\\* -> **Summarize Files**.
@@ -20,14 +20,17 @@ Apply the following rules to the content:
 6.  **Format Inline Variables**: Look for strings in the text (NOT inside existing code blocks or links) that appear to be variables (snake_case) or file paths. 
     Wrap them in single backticks so they render as inline code.
     E.g. file_reader_agent -> `file_reader_agent`
-    E.g. **file_reader_agent** -> `**file_reader_agent**`
-7.  **Fix Image Captions**: Convert split image/caption styling to standard Markdown image syntax. E.g.
+7.  Ensure bold _variables_ or _paths_ are properly single-quoted and surrounded by bold markers.
+    E.g. **Generate llms.txt** -> **Generate `llms.txt`**
+    E.g. **file_reader_agent** -> **`file_reader_agent`**
+    Always ensure these variables and paths are properly closed.
+8.  **Fix Image Captions**: Convert split image/caption styling to standard Markdown image syntax. E.g.
     - Before fixing:
       ![](https://example.com/image.png)
       _My Caption_
     - After fixing:
       ![My Caption](https://example.com/image.png)
-8.  **Frontmatter Check**: Ensure valid YAML frontmatter exists at the top.
+9.  **Frontmatter Check**: Ensure valid YAML frontmatter exists at the top.
     - If missing, create it.
     - Ensure the following keys exist (add with placeholders/defaults if missing):
       - `title`: Extract from the first H1 or use "TODO: Title"
@@ -35,11 +38,11 @@ Apply the following rules to the content:
       - `tags`: todo1, todo2
       - `canonical_url`: "TODO"
       - `cover_image`: "TODO"
-9.  **Liquid Tags**: Convert standalone Twitter and YouTube links to Dev.to Liquid tags.
+10.  **Liquid Tags**: Convert standalone Twitter and YouTube links to Dev.to Liquid tags.
     - Twitter/X: `https://twitter.com/user/status/123` or `x.com/...` -> `{% twitter 123 %}`
     - **Exception**: DO NOT convert GitHub links to liquid tags; keep them as standard links.
     - YouTube: `https://youtube.com/watch?v=123` or `youtu.be/123` -> `{% youtube 123 %}`
-10. **Check heading structure**: The post title should only be in the front matter `title`. It should not be repeated in the markdown content.
+11. **Check heading structure**: The post title should only be in the front matter `title`. It should not be repeated in the markdown content.
     Subsequently, all top-level headings in the md content should be H2 (##). Ensure that sub-headings are at the appropriate level. 
 
 Output ONLY the fixed markdown content. Do not include any conversational preamble. Do not wrap in additional tags.
