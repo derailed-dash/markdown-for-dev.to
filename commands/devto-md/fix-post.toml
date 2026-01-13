@@ -34,6 +34,7 @@ Apply the following rules to the content:
     - Ensure the following keys exist (add with placeholders/defaults if missing):
       - `title`: Extract from the first H1 or use "TODO: Title"
       - `published`: false
+      - `date:` current datetime in the format yyyy-mm-dd HH:mm:ss UTC
       - `tags`: todo1, todo2
       - `canonical_url`: "TODO"
       - `cover_image`: "TODO"
